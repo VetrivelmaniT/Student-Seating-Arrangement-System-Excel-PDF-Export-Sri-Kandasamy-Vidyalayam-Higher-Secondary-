@@ -1,21 +1,23 @@
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #ffd700;
+    background-color: #4CAF50;
+    color: white;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
 .school-name {
-    color: #333;
-    font-size: 2em;
+    color: #fff;
+    font-size: 1.5em;
     margin: 0;
 }
 
@@ -24,7 +26,7 @@ nav button {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin-left: 10px;
+    margin: 10px 0;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -51,8 +53,7 @@ main {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin: 10px 10px 10px 0;
 }
 
 #uploadBtn:hover, #generatePdfBtn:hover, #showRoom1Btn:hover {
@@ -60,7 +61,7 @@ main {
 }
 
 #excelFile {
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .room-details {
@@ -69,22 +70,24 @@ main {
 
 .room-layout {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
 }
 
 .column {
     display: flex;
-    width: 30%;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .bench {
-    width: 45%;
+    width: 48%;
     padding: 10px;
 }
 
 .bench.left {
-    margin-right: 10px;
+    margin-right: 4%;
 }
 
 .seat {
@@ -103,28 +106,6 @@ main {
 
 .student-info {
     font-size: 0.9em;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .school-info, .facilities {
@@ -151,4 +132,47 @@ li {
 
 strong {
     color: #333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    .school-name {
+        font-size: 1.2em;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .bench {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .bench.left {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .school-name {
+        font-size: 1em;
+    }
+
+    nav button, #uploadBtn, #generatePdfBtn, #showRoom1Btn {
+        width: 100%;
+        margin: 5px 0;
+    }
 }
