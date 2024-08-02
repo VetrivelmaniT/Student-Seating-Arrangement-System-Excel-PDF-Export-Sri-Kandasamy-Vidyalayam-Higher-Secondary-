@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const excelFile = document.getElementById('excelFile');
     const generatePdfBtn = document.getElementById('generatePdfBtn');
     const roomDetailsSection = document.getElementById('roomDetailsSection');
-    const showRoom1Btn = document.getElementById('showRoom1Btn');
 
     let studentData = [];
     let roomAssignments = {};
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             studentData = XLSX.utils.sheet_to_json(worksheet);
 
             generateExamArrangement();
-            showRoom1Btn.classList.remove('hidden');
+            createRoomButtons();
             generatePdfBtn.classList.remove('hidden');
         };
 
@@ -69,6 +68,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         }
+    }
+
+    function createRoomButtons() {
+        const buttonContainer = document.createElement('div');
+        buttonContainer.id = 'roomButtonContainer';
+        examSection.appendChild(buttonContainer);
+
+        Object.keys(roomAssignments).forEach(roomNumber => {
+            const button = document.createElement('button');
+            button.textContent = `Show Room ${roomNumber}`;
+            button.addEventListener('click', () => showRoomDetails(roomNumber));
+            buttonContainer.appendChild(button);
+        });
     }
 
     function showRoomDetails(roomNumber) {
@@ -118,10 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         roomDetailsSection.appendChild(roomDiv);
         roomDetailsSection.classList.remove('hidden');
     }
-
-    showRoom1Btn.addEventListener('click', () => {
-        showRoomDetails(1);
-    });
 
     generatePdfBtn.addEventListener('click', () => {
         const { jsPDF } = window.jspdf;
