@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKV Hr Sec School - Exam Hall Arrangement</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="school-name">Sri Kandasamy Vidyalayam Higher Secondary School,Pappanaickenpatti</h1>
+        <nav>
+            <button id="examBtn">Exam Arrangement</button>
+        </nav>
+    </header>
+    <main>
+        <section id="examSection" class="hidden">
+            <h2>Exam Hall Arrangement</h2>
+            <input type="file" id="excelFile" accept=".xlsx, .xls">
+            <button id="uploadBtn">Upload Excel File</button>
+            <button id="showRoom1Btn" class="hidden">Show Room 1</button>
+            <button id="showRoom2Btn" class="hidden">Show Room 2</button>
+            <button id="generatePdfBtn" class="hidden">Generate PDF</button>
+        </section>
+        <section id="roomDetailsSection" class="hidden">
+            <!-- Room details will be dynamically inserted here -->
+        </section>
+        <section class="school-info">
+            <h2>About the Sri Kandasamy Vidyalayam Higher Secondary School, Pappanaickenpatti</h2>
+            <p><strong>Established:</strong> 1940</p>
+            <p><strong>Management:</strong> Pvt. Aided</p>
+            <p><strong>Location:</strong> Rural area, T.KALLUPATTI block, MADURAI district, Tamil Nadu</p>
+            <p><strong>Grades:</strong> 6 to 12</p>
+            <p><strong>Co-educational:</strong> Yes</p>
+            <p><strong>Pre-primary Section:</strong> Not available</p>
+            <p><strong>School Building Usage:</strong> Not used as a shift-school</p>
+            <p><strong>Medium of Instruction:</strong> Tamil</p>
+            <p><strong>Approach:</strong> All weather road</p>
+            <p><strong>Academic Session Start:</strong> April</p>
+        </section>
+        <section class="facilities">
+            <h2>Facilities</h2>
+            <ul>
+                <li><strong>Building Type:</strong> Private</li>
+                <li><strong>Classrooms:</strong> 6 (all in good condition)</li>
+                <li><strong>Non-teaching Rooms:</strong> 2</li>
+                <li><strong>Headmaster/Teacher Room:</strong> Yes</li>
+                <li><strong>Boundary Wall:</strong> Barbed Wire Fencing</li>
+                <li><strong>Electric Connection:</strong> Yes</li>
+                <li><strong>Drinking Water Source:</strong> Tap Water (functional)</li>
+                <li><strong>Toilets:</strong> 7 boys and 7 girls (functional)</li>
+                <li><strong>Playground:</strong> Yes</li>
+                <li><strong>Library:</strong> 5327 books</li>
+                <li><strong>Ramp for Disabled:</strong> Not needed</li>
+                <li><strong>Computers:</strong> 14 (all functional)</li>
+                <li><strong>Computer Aided Learning Lab:</strong> Not available</li>
+                <li><strong>Mid-day Meal:</strong> Provided and prepared in school premises</li>
+            </ul>
+        </section>
+
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
